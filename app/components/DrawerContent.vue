@@ -1,18 +1,12 @@
 <template lang="html">
     <GridLayout rows="auto, *" class="nt-drawer__content">
-        <StackLayout row="0" class="nt-drawer__header">
-            <Image class="nt-drawer__header-image fas t-36" src.decode="font://&#xf2bd;"/>
-            <Label class="nt-drawer__header-brand" text="User Name"/>
-            <Label class="nt-drawer__header-footnote" text="username@mail.com"/>
-        </StackLayout>
-
         <ScrollView row="1" class="nt-drawer__body">
             <StackLayout>
                 <GridLayout columns="auto, *"
-                            :class="'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '')"
-                            @tap="onNavigationItemTap(Home)">
+                            :class="'nt-drawer__list-item' + (selectedPage === 'Section' ? ' -selected': '')"
+                            @tap="onNavigationItemTap(Section)">
                     <Label col="0" text.decode="&#xf015;" class="nt-icon fas"/>
-                    <Label col="1" text="Home" class="p-r-10"/>
+                    <Label col="1" text="Section" class="p-r-10"/>
                 </GridLayout>
 
                 <GridLayout columns="auto, *"
@@ -50,7 +44,7 @@
 </template>
 
 <script>
-  import Home from "./Home";
+  import Section from "./Section";
   import Browse from "./Browse";
   import Featured from "./Featured";
   import Search from "./Search";
@@ -65,7 +59,7 @@
     },
     data() {
       return {
-        Home: Home,
+        Section: Section,
         Browse: Browse,
         Featured: Featured,
         Search: Search,
@@ -74,7 +68,7 @@
       };
     },
     components: {
-      Home,
+      Section,
       Browse,
       Featured,
       Search,
